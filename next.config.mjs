@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
+  reactStrictMode: true,
+  // Disable SWC minification for better compatibility with Socket.IO
+  swcMinify: true,
 };
 
 export default nextConfig;
