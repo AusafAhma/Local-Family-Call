@@ -73,6 +73,25 @@ export default function Home() {
                             </svg>
                             Share this meeting link with others
                         </div>
+
+                        {typeof window !== 'undefined' && window.location.hostname === 'localhost' && (
+                            <div style={{
+                                background: 'rgba(237, 137, 54, 0.2)',
+                                color: '#ed8936',
+                                padding: '0.75rem',
+                                borderRadius: '0.5rem',
+                                marginBottom: '1rem',
+                                fontSize: '0.875rem',
+                                border: '1px solid rgba(237, 137, 54, 0.3)'
+                            }}>
+                                <strong>⚠️ Localhost Warning:</strong> This link (localhost) only works on YOUR computer.
+                                <ul style={{ margin: '0.5rem 0 0 1.2rem' }}>
+                                    <li>For family in <strong>same house</strong>: Use your local IP (e.g., 192.168.x.x)</li>
+                                    <li>For family <strong>remote</strong>: You MUST deploy to Railway/Render</li>
+                                </ul>
+                            </div>
+                        )}
+
                         <div className="link-box">
                             <span className="meeting-link">
                                 {typeof window !== 'undefined' ? window.location.origin : 'Loading...'}
